@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import { type HolidaysResults, type Daily } from './types'
+import { type HolidaysResults, type Daily, Dolar, type DolarResults } from './types'
 import WeatherItem from './components/WeatherItem'
 import Holiday from './components/Holiday'
+import DolarComponent from './components/Dolar'
 
 const API_KEY: string = import.meta.env.VITE_API_KEY
 const INITIAL_STATE = [
@@ -667,9 +668,91 @@ const INITIAL_HOLIDAY = [
   }
 ]
 
+const INITIAL_DOLAR = [
+  {
+    casa: {
+      nombre: 'Oficial',
+      compra: '233,910',
+      venta: '242,910',
+      agencia: '344',
+      observaciones: {},
+      geolocalizacion: {
+        latitud: {},
+        longitud: {}
+      },
+      telefono: '0810-666-4444',
+      direccion: {},
+      decimales: '3'
+    }
+  },
+  {
+    casa: {
+      nombre: 'Blue',
+      compra: '482,000',
+      venta: '487,000',
+      agencia: '380',
+      observaciones: {},
+      geolocalizacion: {
+        latitud: {},
+        longitud: {}
+      },
+      telefono: {},
+      direccion: {},
+      decimales: '3'
+    }
+  },
+  {
+    casa: {
+      nombre: 'Mayorista Bancos',
+      compra: '231,950',
+      venta: '232,350',
+      agencia: '44',
+      geolocalizacion: {
+        latitud: '-34.6033922',
+        longitud: '-58.439710'
+      },
+      telefono: '4556-8995',
+      direccion: 'Uruguay 4532',
+      observaciones: {},
+      decimales: '3'
+    }
+  },
+  {
+    casa: {
+      nombre: 'BCRA de Referencia',
+      compra: '231,308',
+      venta: '243,041',
+      agencia: '49',
+      observaciones: {},
+      decimales: '3'
+    }
+  },
+  {
+    casa: {
+      nombre: 'Banco Nación Billete',
+      compra: '231,500',
+      venta: '241,500',
+      agencia: '47',
+      observaciones: {},
+      decimales: '3'
+    }
+  },
+  {
+    casa: {
+      nombre: 'Banco Nación Público',
+      compra: '231,500',
+      venta: '241,500',
+      agencia: '210',
+      observaciones: {},
+      decimales: '3'
+    }
+  }
+]
+
 function App() {
   const [weather, setWeather] = useState<Daily[]>(INITIAL_STATE)
   const [holidays, setHolidays] = useState<HolidaysResults[]>(INITIAL_HOLIDAY)
+  const [dolar, setDolar] = useState<DolarResults[]>(INITIAL_DOLAR)
   const [loading, setLoading] = useState(false)
 
   /*   useEffect(() => {
@@ -695,12 +778,23 @@ function App() {
       })
   }, []) */
 
+  /* useEffect(() => {
+    fetch('https://www.dolarsi.com/api/api.php?type=dolar')
+      .then(async (res) => await res.json())
+      .then((data) => {
+        setDolar(data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, []) */
+
   const today = new Date(new Date(weather[0].time).getFullYear(), new Date(weather[0].time).getMonth(), new Date(weather[0].time).getDate() + 1)
 
   const nextDays = weather.slice(1)
   return (
     <div className='App'>
-      <h1>HOY</h1>
+      <h1>HOY EN ARGENTINA🧉</h1>
       {
         loading && <p>Loading...</p>
       }
@@ -722,6 +816,7 @@ function App() {
         ))} */}
 
         <Holiday today={today} holidays={holidays} />
+        <DolarComponent dolar={dolar} />
       </div>
     </div>
   )

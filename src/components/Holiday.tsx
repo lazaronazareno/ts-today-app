@@ -18,7 +18,7 @@ export default function Holiday({ today, holidays }: Props) {
   console.log(rtf.format(dayDiff, 'day'))
   return (
     <div className='holiday'>
-      <p>El proximo feriado es {rtf.format(dayDiff, 'day')}</p>
+      <p>El proximo descanso es {rtf.format(dayDiff, 'day')} :</p>
       <p>{nextHoliday?.motivo}</p>
     </div>
   )

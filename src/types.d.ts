@@ -50,8 +50,8 @@ export interface Values {
   iceAccumulationMax: number
   iceAccumulationMin: number
   iceAccumulationSum: number
-  moonriseTime: Date
-  moonsetTime: Date
+  moonriseTime: string
+  moonsetTime: string
   precipitationProbabilityAvg: number
   precipitationProbabilityMax: number
   precipitationProbabilityMin: number
@@ -89,8 +89,8 @@ export interface Values {
   snowIntensityAvg: number
   snowIntensityMax: number
   snowIntensityMin: number
-  sunriseTime: Date
-  sunsetTime: Date
+  sunriseTime: string
+  sunsetTime: string
   temperatureApparentAvg: number
   temperatureApparentMax: number
   temperatureApparentMin: number
@@ -131,4 +131,25 @@ export enum HolidayType {
   Inamovible = 'inamovible',
   Puente = 'puente',
   Trasladable = 'trasladable',
+}
+
+export interface DolarResults {
+  casa: Dolar
+}
+
+export interface Dolar {
+  nombre: string
+  compra: string
+  venta: string
+  agencia: string
+  observaciones: object
+  geolocalizacion?: Geolocalizacion
+  telefono?: object | string
+  direccion?: object | string
+  decimales: string
+}
+
+export interface Geolocalizacion {
+  latitud: object | string
+  longitud: object | string
 }
