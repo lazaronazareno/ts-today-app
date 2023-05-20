@@ -10,13 +10,16 @@ export default function DolarComponent({ dolar }: Props) {
 
   return (
     <div className="dolar">
-      {filteredDolar.map(d => (
-        <div key={d.nombre}>
-          <p>{d.nombre}</p>
-          <p>compra: ${Number(d.compra.replace(/,/g, '.')).toFixed(0)}</p>
-          <p>venta: ${Number(d.venta.replace(/,/g, '.')).toFixed(0)}</p>
-        </div>
-      ))}
+      <h3>💸 Valor Dolar al día 💸</h3>
+      <div>
+        {filteredDolar.map(d => (
+          <div className='dolar-item' key={d.nombre}>
+            <p>{d.nombre}</p>
+            <p>compra: ${Number(d.compra.replace(/,/g, '.')).toFixed(0)}</p>
+            <p>venta: ${Number(d.venta.replace(/,/g, '.')).toFixed(0)}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

@@ -802,22 +802,20 @@ function App() {
       {weather.length > 0 && (
         <WeatherItem weather={weather[0]} />
       )}
-      <div>
 
-        {/* {nextDays.map((weather) => (
+      {/* {nextDays.map((weather) => (
           <WeatherItem key={weather.time} weather={weather} />
         ))} */}
 
-        {/* {holidays.map((holiday) => (
+      {/* {holidays.map((holiday) => (
           <div key={`${holiday.id} + ${holiday.dia} + ${holiday.motivo}`}>
             <p>{holiday.motivo}</p>
             <p>{holiday.dia}/{holiday.mes}</p>
           </div>
         ))} */}
 
-        <Holiday today={today} holidays={holidays} />
-        <DolarComponent dolar={dolar} />
-      </div>
+      <Holiday today={today} holidays={holidays} />
+      <DolarComponent dolar={dolar} />
     </div>
   )
 }

@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -18,8 +17,12 @@
 }
 
 .weather-item {
-  border: 1px solid white;
-  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 20rem;
+  gap: 1rem;
   padding: 1rem;
 }
 
@@ -33,6 +36,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
+  text-align: start;
 }
 
 .temperature, .rain, .cloud {
@@ -67,18 +71,114 @@
   width: 2rem;
 }
 
-.holiday {
-  border: 1px solid white;
-  border-radius: 1rem;
-  padding: 1rem;
+.cloudy {
+  /*
+  * Created with https://www.css-gradient.com
+  * Gradient link: https://www.css-gradient.com/?c1=777777&c2=b5b5b5&gt=l&gd=dtl
+  */
+  background: #777777;
+  background: linear-gradient(135deg, #777777, #B5B5B5);
 }
+
+.sunny {
+  background: #F2EE8A;
+  background: linear-gradient(135deg, #F2EE8A, #D6BD2F);
+  color: black;
+}
+
+.rainy {
+  background: #1857B5;
+  background: linear-gradient(135deg, #1857B5, #AEBCFC);
+}
+
+/* ///////////////////// FERIADOS ///////////////// */
+
+.holiday {
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.año-nuevo {
+  background: #969689;
+  background: linear-gradient(135deg, #969689, #F6CA37);
+  color: black;
+}
+
+.carnaval {
+  background: #BA4848;
+  background: linear-gradient(135deg, #BA4848, #0886EE);
+}
+
+.memoria-verdad-justicia,
+ .trabajador,
+.revolucion-mayo,
+.independencia,
+.soberania-nacional,
+.veteranos-malvinas,
+.martin-guemes,
+.belgrano,
+.san-martin {
+  background: #0C9AD3;
+  background: linear-gradient(135deg, #0C9AD3, #FFFFFF);
+  color: black;
+}
+
+.diversidad {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+);
+  color: black;
+}
+
+.viernes-santo, .inmaculada-maria {
+  background: #F9FF42;
+  background: linear-gradient(135deg, #F9FF42, #FAFAFA);
+  color: black;
+}
+
+.puente-turistico {
+  background: #AF4848;
+  background: linear-gradient(135deg, #AF4848, #E6924A);
+}
+
+.navidad {
+  background: #A70E1D;
+  background: linear-gradient(135deg, #A70E1D, #007B47);
+}
+
+/* ///////////// DOLAR ////////////////// */
 
 .dolar {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border: 1px solid white;
-  border-radius: 1rem;
   padding: 1rem;
+  background-color: #039759;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.dolar > div {
+  display: flex;
+  gap: 1rem;
+}
+
+.dolar-item {
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: .5rem;
 }

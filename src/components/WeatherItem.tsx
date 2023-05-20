@@ -29,7 +29,7 @@ export default function WeatherItem({ weather }: Props) {
   }, [])
 
   return (
-    <div className='weather-item'>
+    <div className={`weather-item ${icon}`}>
       <p className='today'>{date}</p>
       <div className='temperature'>
         <p>{weather.values.temperatureAvg.toFixed(0)}ºC</p>
