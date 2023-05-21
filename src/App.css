@@ -17,6 +17,7 @@
   gap: .5rem;
   text-transform: uppercase;
   font-weight: 500;
+  position: relative;
 }
 
 /* ////////////// WEATHER ////////////////// */
@@ -190,6 +191,7 @@
   gap: .5rem;
   background: #F20726;
   background: linear-gradient(135deg, #F20726, #F4321E);
+  margin-bottom: 2rem;
 }
 
 /* //////////// FOOTER //////////// */
