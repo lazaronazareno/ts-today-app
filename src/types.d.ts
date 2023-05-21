@@ -153,3 +153,8 @@ export interface Geolocalizacion {
   latitud: object | string
   longitud: object | string
 }
+
+export interface UtilDate {
+  name: string
+  date: Date
+}

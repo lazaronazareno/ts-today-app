@@ -26,7 +26,7 @@ export default function WeatherItem({ weather }: Props) {
     if (weather.values.precipitationProbabilityAvg > 50) {
       setIcon('rainy')
     }
-  }, [])
+  }, [weather])
 
   return (
     <div className={`weather-item ${icon}`}>
