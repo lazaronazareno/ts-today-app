@@ -7,6 +7,7 @@ import UsefulDates from './components/UsefulDates'
 import { UseWeather } from './hooks/useWeather'
 import { UseHoliday } from './hooks/useHoliday'
 import { UseDolar } from './hooks/useDolar'
+import Footer from './components/Footer'
 
 const INITIAL_USEFUL_DATES = [
   {
@@ -40,6 +41,7 @@ function App() {
       }
       <DolarComponent dolar={dolar} />
       <UsefulDates today={today} usefulDates={usefulDates} />
+      <Footer />
     </div>
   )
 }
