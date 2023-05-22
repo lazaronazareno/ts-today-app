@@ -4,7 +4,7 @@ import { type HolidaysResults } from '../types'
 export const UseHoliday = () => {
   const [holidays, setHolidays] = useState<HolidaysResults[]>([])
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<boolean | null>(null)
 
   useEffect(() => {
     setLoading(true)

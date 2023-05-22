@@ -4,12 +4,11 @@ import { type SubteElement, type SubteElementFromFetch } from '../types'
 export const UseSubte = () => {
   const [subtes, setSubtes] = useState<SubteElement[]>([])
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const proxy: string = import.meta.env.VITE_PROXY
+  const [error, setError] = useState<boolean | null>(null)
 
   useEffect(() => {
     setLoading(true)
-    fetch(`${proxy}https://buenosaires.gob.ar/subtes`, {
+    fetch('https://buenosaires.gob.ar/subtes', {
       method: 'GET'
     })
       .then(async (res) => await res.json())

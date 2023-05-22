@@ -6,7 +6,7 @@ const API_KEY: string = import.meta.env.VITE_API_KEY
 export const UseWeather = () => {
   const [weather, setWeather] = useState<Daily[]>([])
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<boolean | null>(null)
 
   useEffect(() => {
     setLoading(true)

@@ -3,6 +3,7 @@ import { LineaAIcon, LineaBIcon, LineaCIcon, LineaDIcon, LineaEIcon, LineaHIcon,
 
 interface Props {
   subtes: SubteElement[]
+  error: boolean | null
 }
 
 const getIcon = (name: string) => {
@@ -43,7 +44,14 @@ const SubteItem = ({ subte }: { subte: SubteElement }) => {
   )
 }
 
-export default function Subtes({ subtes }: Props) {
+export default function Subtes({ subtes, error }: Props) {
+  if (error as boolean) {
+    return (
+      <div className='subtes'>
+        <p>Error al obtener los datos del Subte.</p>
+      </div>
+    )
+  }
   return (
     <a title='Informacion Subtes' href="https://buenosaires.gob.ar/subte" target="_blank" rel="noopener noreferrer" className="subtes">
       {

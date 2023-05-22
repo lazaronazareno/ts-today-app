@@ -4,10 +4,19 @@ import WeatherIcon from './WeatherIcon'
 
 interface Props {
   weather: Daily
+  error: boolean | null
 }
 
-export default function WeatherItem({ weather }: Props) {
-  const [icon, setIcon] = useState<string>('sunny')
+export default function WeatherItem({ weather, error }: Props) {
+  const [icon, setIcon] = useState<string>('cloudy')
+
+  if (error as boolean) {
+    return (
+      <div className={`${icon}`}>
+        <p>Error al obtener los datos del clima.</p>
+      </div>
+    )
+  }
 
   const date = new Date(
     new Date(weather.time).getFullYear(),

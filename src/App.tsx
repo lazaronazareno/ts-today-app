@@ -23,10 +23,10 @@ const INITIAL_USEFUL_DATES = [
 ]
 
 function App() {
-  const { weather, loading } = UseWeather()
-  const { holidays } = UseHoliday()
-  const { dolar } = UseDolar()
-  const { subtes } = UseSubte()
+  const { weather, loading: weatherLoading, error: weatherError } = UseWeather()
+  const { holidays, loading: holidayLoading, error: holidayError } = UseHoliday()
+  const { dolar, loading: dolarLoading, error: dolarError } = UseDolar()
+  const { subtes, loading: subteLoading, error: subteError } = UseSubte()
   const usefulDates: UtilDate[] = INITIAL_USEFUL_DATES
   const today = new Date()
 
@@ -34,16 +34,26 @@ function App() {
     <div className='App'>
       <h1>HOY EN ARGENTINA🧉</h1>
 
-      {loading && <p>Cargando...</p>}
-
-      {weather.length > 0 && (
-        <WeatherItem weather={weather[0]} />
-      )}
-      <Subtes subtes={subtes} />
-      {holidays.length > 0 &&
-        <Holiday today={today} holidays={holidays} />
+      {!weatherLoading && (weather.length > 0 || weatherError as boolean)
+        ? <WeatherItem weather={weather[0]} error={weatherError} />
+        : <p>Cargando...</p>
       }
-      <DolarComponent dolar={dolar} />
+
+      {!subteLoading && (subtes.length > 0 || subteError as boolean)
+        ? <Subtes subtes={subtes} error={subteError} />
+        : <p>Cargando...</p>
+      }
+
+      {!holidayLoading && (holidays.length > 0 || holidayError as boolean)
+        ? <Holiday today={today} holidays={holidays} error={holidayError} />
+        : <p>Cargando...</p>
+      }
+
+      {!dolarLoading && (dolar.length > 0 || dolarError as boolean)
+        ? <DolarComponent dolar={dolar} error={dolarError} />
+        : <p>Cargando...</p>
+      }
+
       <UsefulDates today={today} usefulDates={usefulDates} />
       <Footer />
     </div>

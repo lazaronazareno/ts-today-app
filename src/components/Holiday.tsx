@@ -3,9 +3,17 @@ import { type HolidaysResults } from '../types'
 interface Props {
   today: Date
   holidays: HolidaysResults[]
+  error: boolean | null
 }
 
-export default function Holiday({ today, holidays }: Props) {
+export default function Holiday({ today, holidays, error }: Props) {
+  if (error as boolean) {
+    return (
+      <div className='holiday'>
+        <p>Error al obtener el siguiente feriado</p>
+      </div>
+    )
+  }
   const nextHoliday = holidays.find((holiday) => (new Date(2023, holiday.mes - 1, holiday.dia)) > today ?? { ...holidays[0] })
   const nextHolidayDate = new Date(2023, nextHoliday?.mes as number - 1, nextHoliday?.dia)
 

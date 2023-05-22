@@ -4,7 +4,7 @@ import { type DolarResults } from '../types'
 export const UseDolar = () => {
   const [dolar, setDolar] = useState<DolarResults[]>([])
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<boolean | null>(null)
 
   useEffect(() => {
     setLoading(true)
