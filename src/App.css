@@ -194,6 +194,65 @@
   margin-bottom: 2rem;
 }
 
+/* //////////// SUBTES //////////// */
+
+.subtes {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem .5rem;
+  background: #FFF6BF;
+  background: linear-gradient(135deg, #FFF6BF, #F7E59E);
+}
+
+.subtes:hover {
+  color: black;
+}
+
+.subte {
+  border-radius: .5rem;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+}
+
+.Línea.A {
+  background-color: #0bb1d9;
+}
+
+.Línea.B {
+  background-color: #ef4136;
+}
+
+.Línea.C {
+  background-color: #0a6fb5;
+}
+
+.Línea.D {
+  background-color: #00816b;
+}
+
+.Línea.E {
+  background-color: #7b2d90;
+}
+
+.Línea.H {
+  background-color: #ffd001;
+}
+
+.Línea.P {
+  background-color: #f5ae38;
+}
+
+.Línea.U {
+  background-color: #f57625;
+}
+
+
 /* //////////// FOOTER //////////// */
 
 footer {

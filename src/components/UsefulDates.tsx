@@ -6,8 +6,6 @@ interface Props {
 }
 
 export default function UsefulDates({ usefulDates, today }: Props) {
-  console.log(usefulDates[0].date)
-  console.log(usefulDates[0].date.getTime())
   const msDiff = usefulDates[0].date.getTime() - today.getTime()
   const dayDiff = Math.round(msDiff / 86400000)
 

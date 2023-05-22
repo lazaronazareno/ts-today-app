@@ -158,3 +158,19 @@ export interface UtilDate {
   name: string
   date: Date
 }
+
+export interface Subte {
+  subtes: SubteElement[]
+}
+
+export interface SubteElementFromFetch {
+  nombre: string
+  estado: string[]
+  frecuencia: string
+}
+
+export interface SubteElement {
+  nombre: string
+  estado: string
+  frecuencia: string
+}

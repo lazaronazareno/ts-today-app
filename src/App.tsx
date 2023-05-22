@@ -8,6 +8,8 @@ import { UseWeather } from './hooks/useWeather'
 import { UseHoliday } from './hooks/useHoliday'
 import { UseDolar } from './hooks/useDolar'
 import Footer from './components/Footer'
+import Subtes from './components/Subtes'
+import { UseSubte } from './hooks/useSubte'
 
 const INITIAL_USEFUL_DATES = [
   {
@@ -24,6 +26,7 @@ function App() {
   const { weather, loading } = UseWeather()
   const { holidays } = UseHoliday()
   const { dolar } = UseDolar()
+  const { subtes } = UseSubte()
   const usefulDates: UtilDate[] = INITIAL_USEFUL_DATES
   const today = new Date()
 
@@ -36,6 +39,7 @@ function App() {
       {weather.length > 0 && (
         <WeatherItem weather={weather[0]} />
       )}
+      <Subtes subtes={subtes} />
       {holidays.length > 0 &&
         <Holiday today={today} holidays={holidays} />
       }
