@@ -20,6 +20,22 @@
   position: relative;
 }
 
+h1 {
+  margin: 1.5rem 0;
+}
+
+.isHoliday {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: .75rem;
+  background-color: #000000a1;
+}
+
+.isHoliday img {
+  width: 2rem;
+}
+
 /* ////////////// WEATHER ////////////////// */
 
 .weather-item {
@@ -99,17 +115,18 @@
 
 .holiday {
   padding: 1rem;
+  color: black;
 }
 
 .año-nuevo {
   background: #969689;
   background: linear-gradient(135deg, #969689, #F6CA37);
-  color: black;
 }
 
 .carnaval {
   background: #BA4848;
   background: linear-gradient(135deg, #BA4848, #0886EE);
+  color: #ffffffde;
 }
 
 .memoria-verdad-justicia,
@@ -123,7 +140,6 @@
 .san-martin {
   background: #0C9AD3;
   background: linear-gradient(135deg, #0C9AD3, #FFFFFF);
-  color: black;
 }
 
 .diversidad {
@@ -141,23 +157,23 @@
     rgba(251, 7, 217, 1) 90%,
     rgba(255, 0, 0, 1) 100%
 );
-  color: black;
 }
 
 .viernes-santo, .inmaculada-maria {
   background: #F9FF42;
   background: linear-gradient(135deg, #F9FF42, #FAFAFA);
-  color: black;
 }
 
 .puente-turistico {
   background: #AF4848;
   background: linear-gradient(135deg, #AF4848, #E6924A);
+  color: #ffffffde;
 }
 
 .navidad {
   background: #A70E1D;
   background: linear-gradient(135deg, #A70E1D, #007B47);
+  color: #ffffffde;
 }
 
 /* ///////////// DOLAR ////////////////// */
@@ -197,17 +213,22 @@
 /* //////////// SUBTES //////////// */
 
 .subtes {
+  background: #FFF6BF;
+  background: linear-gradient(135deg, #FFF6BF, #F7E59E);
+  color: black;
+}
+
+.subtes a {
   color: black;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
   padding: 1rem .5rem;
-  background: #FFF6BF;
-  background: linear-gradient(135deg, #FFF6BF, #F7E59E);
+  font-size: .9rem;
 }
 
-.subtes:hover {
+.subtes a:hover {
   color: black;
 }
 
@@ -220,35 +241,42 @@
   width: 4.5rem;
 }
 
-.Línea.A {
+.subte-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 6rem;
+}
+
+.A {
   background-color: #0bb1d9;
 }
 
-.Línea.B {
+.B {
   background-color: #ef4136;
 }
 
-.Línea.C {
+.C {
   background-color: #0a6fb5;
 }
 
-.Línea.D {
+.D {
   background-color: #00816b;
 }
 
-.Línea.E {
+.E {
   background-color: #7b2d90;
 }
 
-.Línea.H {
+.H {
   background-color: #ffd001;
 }
 
-.Línea.P {
+.P {
   background-color: #f5ae38;
 }
 
-.Línea.U {
+.U {
   background-color: #f57625;
 }
 

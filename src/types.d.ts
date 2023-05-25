@@ -159,6 +159,8 @@ export interface UtilDate {
   date: Date
 }
 
+/* TYPES FROM BUENOS AIRES API */
+/*
 export interface Subte {
   subtes: SubteElement[]
 }
@@ -173,4 +175,15 @@ export interface SubteElement {
   nombre: string
   estado: string
   frecuencia: string
+} */
+
+export interface Subtes {
+  page: string
+  subte: Subte[]
+  actualizado: string
+}
+
+export interface Subte {
+  nombre: string
+  estado: string
 }

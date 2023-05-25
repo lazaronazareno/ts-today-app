@@ -8,8 +8,10 @@ import { UseWeather } from './hooks/useWeather'
 import { UseHoliday } from './hooks/useHoliday'
 import { UseDolar } from './hooks/useDolar'
 import Footer from './components/Footer'
-import Subtes from './components/Subtes'
 import { UseSubte } from './hooks/useSubte'
+import SubtesComponent from './components/Subtes'
+import { useContext } from 'react'
+import { HolidayContext } from './context/holidayContext'
 
 const INITIAL_USEFUL_DATES = [
   {
@@ -29,10 +31,19 @@ function App() {
   const { subtes, loading: subteLoading, error: subteError } = UseSubte()
   const usefulDates: UtilDate[] = INITIAL_USEFUL_DATES
   const today = new Date()
+  const { isHoliday } = useContext(HolidayContext)
 
   return (
-    <div className='App'>
+    <div className={`App ${isHoliday != null ? isHoliday.id : ''}`}>
+
       <h1>HOY EN ARGENTINA🧉</h1>
+      {isHoliday != null && (
+        <div className='isHoliday'>
+          <img src='/arg.webp' alt='Argentina' />
+          <h2>{isHoliday.motivo}</h2>
+          <img src='/arg.webp' alt='Argentina' />
+        </div>
+      )}
 
       {!weatherLoading && (weather.length > 0 || weatherError as boolean)
         ? <WeatherItem weather={weather[0]} error={weatherError} />
@@ -40,7 +51,7 @@ function App() {
       }
 
       {!subteLoading && (subtes.length > 0 || subteError as boolean)
-        ? <Subtes subtes={subtes} error={subteError} />
+        ? <SubtesComponent subtes={subtes} error={subteError} />
         : <p>Cargando...</p>
       }
 

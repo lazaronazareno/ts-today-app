@@ -1,40 +1,40 @@
-import { type SubteElement } from '../types'
+import { type Subtes, type Subte } from '../types'
 import { LineaAIcon, LineaBIcon, LineaCIcon, LineaDIcon, LineaEIcon, LineaHIcon, LineaPIcon, LineaUIcon } from './SubteIcons'
 
 interface Props {
-  subtes: SubteElement[]
+  subtes: Subtes[]
   error: boolean | null
 }
 
 const getIcon = (name: string) => {
-  if (name === 'Línea A') {
+  if (name === 'A') {
     return <LineaAIcon />
   }
-  if (name === 'Línea B') {
+  if (name === 'B') {
     return <LineaBIcon />
   }
-  if (name === 'Línea C') {
+  if (name === 'C') {
     return <LineaCIcon />
   }
-  if (name === 'Línea D') {
+  if (name === 'D') {
     return <LineaDIcon />
   }
-  if (name === 'Línea E') {
+  if (name === 'E') {
     return <LineaEIcon />
   }
-  if (name === 'Línea H') {
+  if (name === 'H') {
     return <LineaHIcon />
   }
-  if (name === 'Línea P') {
+  if (name === 'P') {
     return <LineaPIcon />
   }
-  if (name === 'Línea U') {
+  if (name === 'U') {
     return <LineaUIcon />
   }
   return null
 }
 
-const SubteItem = ({ subte }: { subte: SubteElement }) => {
+const SubteItem = ({ subte }: { subte: Subte }) => {
   const icon = getIcon(subte.nombre)
   return (
     <div className="subte-item">
@@ -44,7 +44,7 @@ const SubteItem = ({ subte }: { subte: SubteElement }) => {
   )
 }
 
-export default function Subtes({ subtes, error }: Props) {
+export default function SubtesComponent({ subtes, error }: Props) {
   if (error as boolean) {
     return (
       <div className='subtes'>
@@ -52,13 +52,22 @@ export default function Subtes({ subtes, error }: Props) {
       </div>
     )
   }
+  const today = new Date()
+  const lastUpdate = new Date(subtes[0].actualizado)
+  const msDiff = lastUpdate.getTime() - today.getTime()
+  const dayDiff = Math.round(msDiff / 60000)
+
+  const rtf = new Intl.RelativeTimeFormat('es-AR', { numeric: 'auto' })
   return (
-    <a title='Informacion Subtes' href="https://buenosaires.gob.ar/subte" target="_blank" rel="noopener noreferrer" className="subtes">
-      {
-        subtes.map(subte => (
-          <SubteItem key={subte.nombre} subte={subte} />
-        ))
-      }
-    </a>
+    <div className="subtes">
+      <a title='Informacion Subtes' href="https://buenosaires.gob.ar/subte" target="_blank" rel="noopener noreferrer" >
+        {
+          subtes[0].subte.map(subte => (
+            <SubteItem key={subte.nombre} subte={subte} />
+          ))
+        }
+      </a>
+      <p>Actualizado {rtf.format(dayDiff, 'minutes')}</p>
+    </div>
   )
 }
