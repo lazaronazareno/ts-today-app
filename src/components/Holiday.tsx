@@ -19,8 +19,8 @@ export default function Holiday({ today, holidays, error }: Props) {
     )
   }
 
-  const nextHoliday = holidays.find((holiday) => (new Date(2023, holiday.mes - 1, holiday.dia)) > today ?? { ...holidays[0] })
-  const nextHolidayDate = new Date(2023, nextHoliday?.mes as number - 1, nextHoliday?.dia)
+  const nextHoliday = holidays.find((holiday) => (new Date(2024, holiday.mes - 1, holiday.dia)) > today ?? { ...holidays[0] })
+  const nextHolidayDate = new Date(2024, nextHoliday?.mes as number - 1, nextHoliday?.dia)
 
   const msDiff = nextHolidayDate.getTime() - today.getTime()
   const dayDiff = Math.round(msDiff / 86400000)
@@ -29,7 +29,7 @@ export default function Holiday({ today, holidays, error }: Props) {
 
   useEffect(() => {
     const isHoliday = holidays.find((holiday) => {
-      const holidayDate = new Date(2023, holiday.mes, holiday.dia)
+      const holidayDate = new Date(2024, holiday.mes, holiday.dia)
       return (
         (
           holidayDate.getDate() === today.getDate() && holidayDate.getMonth() === today.getMonth() + 1

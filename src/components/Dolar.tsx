@@ -22,8 +22,8 @@ export default function DolarComponent({ dolar, error }: Props) {
         {filteredDolar.map(d => (
           <div className='dolar-item' key={d.nombre}>
             <p>{d.nombre}</p>
-            <p>compra: ${Number(d.compra.replace(/,/g, '.')).toFixed(0)}</p>
-            <p>venta: ${Number(d.venta.replace(/,/g, '.')).toFixed(0)}</p>
+            <p>compra: ${d.compra}</p>
+            <p>venta: ${d.venta}</p>
           </div>
         ))}
       </div>
