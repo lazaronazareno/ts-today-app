@@ -1,9 +1,9 @@
 import './App.css'
-import { type UtilDate } from './types'
+/* import { type UtilDate } from './types' */
 import WeatherItem from './components/WeatherItem'
 import Holiday from './components/Holiday'
 import DolarComponent from './components/Dolar'
-import UsefulDates from './components/UsefulDates'
+/* import UsefulDates from './components/UsefulDates' */
 import { UseWeather } from './hooks/useWeather'
 import { UseHoliday } from './hooks/useHoliday'
 import { UseDolar } from './hooks/useDolar'
@@ -13,7 +13,7 @@ import SubtesComponent from './components/Subtes'
 import { useContext } from 'react'
 import { HolidayContext } from './context/holidayContext'
 
-const INITIAL_USEFUL_DATES = [
+/* const INITIAL_USEFUL_DATES = [
   {
     name: 'Elecciones PASO',
     date: new Date('2023-08-13')
@@ -22,14 +22,14 @@ const INITIAL_USEFUL_DATES = [
     name: 'Elecciones Generales',
     date: new Date('2023-10-22')
   }
-]
+] */
 
 function App() {
   const { weather, loading: weatherLoading, error: weatherError } = UseWeather()
   const { holidays, loading: holidayLoading, error: holidayError } = UseHoliday()
   const { dolar, loading: dolarLoading, error: dolarError } = UseDolar()
   const { subtes, loading: subteLoading, error: subteError } = UseSubte()
-  const usefulDates: UtilDate[] = INITIAL_USEFUL_DATES
+  /* const usefulDates: UtilDate[] = INITIAL_USEFUL_DATES */
   const today = new Date()
   const { isHoliday } = useContext(HolidayContext)
 
@@ -65,7 +65,7 @@ function App() {
         : <p>Cargando...</p>
       }
 
-      <UsefulDates today={today} usefulDates={usefulDates} />
+      {/* <UsefulDates today={today} usefulDates={usefulDates} /> */}
       <Footer />
     </div>
   )
