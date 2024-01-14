@@ -8,7 +8,10 @@ export const UseHoliday = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://nolaborables.com.ar/api/v2/feriados/2024')
+    fetch('https://nolaborables.com.ar/api/v2/feriados/2024', {
+      method: 'GET',
+      mode: 'no-cors'
+    })
       .then(async (res) => await res.json())
       .then((data) => {
         setHolidays(data)
