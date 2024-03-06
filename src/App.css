@@ -14,7 +14,7 @@
 .App {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
   text-transform: uppercase;
   font-weight: 500;
   position: relative;
@@ -28,7 +28,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  font-size: .75rem;
+  font-size: 0.75rem;
   background-color: #000000a1;
 }
 
@@ -48,7 +48,7 @@ h1 {
   padding: 1rem;
 }
 
-.weather-item__footer{
+.weather-item__footer {
   display: flex;
   justify-content: end;
   gap: 1rem;
@@ -59,11 +59,13 @@ h1 {
   text-align: start;
 }
 
-.temperature, .rain, .cloud {
+.temperature,
+.rain,
+.cloud {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .temperature p {
@@ -75,19 +77,22 @@ h1 {
   width: 6rem;
 }
 
-.rain, .cloud {
+.rain,
+.cloud {
   justify-content: end;
   border: 1px solid white;
-  border-radius: .5rem;
-  padding: .2rem .5rem;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
-.rain p, .cloud p {
+.rain p,
+.cloud p {
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-.rain img, .cloud img {
+.rain img,
+.cloud img {
   width: 2rem;
 }
 
@@ -97,18 +102,18 @@ h1 {
   * Gradient link: https://www.css-gradient.com/?c1=777777&c2=b5b5b5&gt=l&gd=dtl
   */
   background: #777777;
-  background: linear-gradient(135deg, #777777, #B5B5B5);
+  background: linear-gradient(135deg, #777777, #b5b5b5);
 }
 
 .sunny {
-  background: #F2EE8A;
-  background: linear-gradient(135deg, #F2EE8A, #D6BD2F);
+  background: #f2ee8a;
+  background: linear-gradient(135deg, #f2ee8a, #d6bd2f);
   color: black;
 }
 
 .rainy {
-  background: #1857B5;
-  background: linear-gradient(135deg, #1857B5, #AEBCFC);
+  background: #1857b5;
+  background: linear-gradient(135deg, #1857b5, #aebcfc);
 }
 
 /* ///////////////////// FERIADOS ///////////////// */
@@ -120,17 +125,17 @@ h1 {
 
 .año-nuevo {
   background: #969689;
-  background: linear-gradient(135deg, #969689, #F6CA37);
+  background: linear-gradient(135deg, #969689, #f6ca37);
 }
 
 .carnaval {
-  background: #BA4848;
-  background: linear-gradient(135deg, #BA4848, #0886EE);
+  background: #ba4848;
+  background: linear-gradient(135deg, #ba4848, #0886ee);
   color: #ffffffde;
 }
 
 .memoria-verdad-justicia,
- .trabajador,
+.trabajador,
 .revolucion-mayo,
 .independencia,
 .soberania-nacional,
@@ -138,8 +143,8 @@ h1 {
 .martin-guemes,
 .belgrano,
 .san-martin {
-  background: #0C9AD3;
-  background: linear-gradient(135deg, #0C9AD3, #FFFFFF);
+  background: #0c9ad3;
+  background: linear-gradient(135deg, #0c9ad3, #ffffff);
 }
 
 .diversidad {
@@ -156,23 +161,24 @@ h1 {
     rgba(186, 12, 248, 1) 80%,
     rgba(251, 7, 217, 1) 90%,
     rgba(255, 0, 0, 1) 100%
-);
+  );
 }
 
-.viernes-santo, .inmaculada-maria {
-  background: #F9FF42;
-  background: linear-gradient(135deg, #F9FF42, #FAFAFA);
+.viernes-santo,
+.inmaculada-maria {
+  background: #f9ff42;
+  background: linear-gradient(135deg, #f9ff42, #fafafa);
 }
 
 .puente-turistico {
-  background: #AF4848;
-  background: linear-gradient(135deg, #AF4848, #E6924A);
+  background: #af4848;
+  background: linear-gradient(135deg, #af4848, #e6924a);
   color: #ffffffde;
 }
 
 .navidad {
-  background: #A70E1D;
-  background: linear-gradient(135deg, #A70E1D, #007B47);
+  background: #a70e1d;
+  background: linear-gradient(135deg, #a70e1d, #007b47);
   color: #ffffffde;
 }
 
@@ -186,7 +192,7 @@ h1 {
   gap: 1rem;
   padding: 1rem;
   background: #007047;
-  background: linear-gradient(135deg, #007047, #01DAB9);
+  background: linear-gradient(135deg, #007047, #01dab9);
 }
 
 .dolar > div {
@@ -196,25 +202,25 @@ h1 {
 
 .dolar-item {
   border: 1px solid;
-  border-radius: .5rem;
-  padding: .5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 
 .useful-dates {
   display: flex;
   flex-direction: column;
-  padding: .5rem;
-  gap: .5rem;
-  background: #F20726;
-  background: linear-gradient(135deg, #F20726, #F4321E);
+  padding: 0.5rem;
+  gap: 0.5rem;
+  background: #f20726;
+  background: linear-gradient(135deg, #f20726, #f4321e);
   margin-bottom: 2rem;
 }
 
 /* //////////// SUBTES //////////// */
 
 .subtes {
-  background: #FFF6BF;
-  background: linear-gradient(135deg, #FFF6BF, #F7E59E);
+  background: #fff6bf;
+  background: linear-gradient(135deg, #fff6bf, #f7e59e);
   color: black;
 }
 
@@ -224,8 +230,8 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem .5rem;
-  font-size: .9rem;
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
 }
 
 .subtes a:hover {
@@ -233,7 +239,7 @@ h1 {
 }
 
 .subte {
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   padding: 0.2rem;
   display: flex;
   justify-content: center;
@@ -246,6 +252,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   min-width: 6rem;
+  width: 8rem;
 }
 
 .A {
@@ -280,13 +287,9 @@ h1 {
   background-color: #f57625;
 }
 
-
 /* //////////// FOOTER //////////// */
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   text-align: left;
