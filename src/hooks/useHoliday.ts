@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { type HolidaysResults } from '../types'
+import { localHolidays } from '../utils'
 
 export const UseHoliday = () => {
   const [holidays, setHolidays] = useState<HolidaysResults[]>([])
@@ -8,10 +9,7 @@ export const UseHoliday = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://nolaborables.com.ar/api/v2/feriados/2024', {
-      method: 'GET',
-      mode: 'no-cors'
-    })
+    fetch('http://nolaborables.com.ar/api/v2/feriados/2024', { method: 'GET' })
       .then(async (res) => await res.json())
       .then((data) => {
         setHolidays(data)
@@ -25,7 +23,8 @@ export const UseHoliday = () => {
   }, [])
 
   return {
-    holidays,
+    // change to test the api
+    holidays: holidays.length > 0 ? holidays : localHolidays,
     loading,
     error
   }

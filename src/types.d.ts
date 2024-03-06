@@ -130,14 +130,14 @@ export interface HolidaysResults {
 export enum HolidayType {
   Inamovible = 'inamovible',
   Puente = 'puente',
-  Trasladable = 'trasladable',
+  Trasladable = 'trasladable'
 }
 
 export interface DolarResults {
-  casa: Dolar
+  dolar: Dolar
 }
-
-export interface Dolar {
+// dolarsi api
+/* export interface Dolar {
   nombre: string
   compra: string
   venta: string
@@ -147,6 +147,14 @@ export interface Dolar {
   telefono?: object | string
   direccion?: object | string
   decimales: string
+} */
+export interface Dolar {
+  casa: string
+  compra: number
+  fechaActualizacion: string
+  moneda: string
+  nombre: string
+  venta: number
 }
 
 export interface Geolocalizacion {

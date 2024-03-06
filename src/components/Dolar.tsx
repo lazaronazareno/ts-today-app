@@ -1,7 +1,7 @@
-import { type DolarResults } from '../types'
+import { type Dolar } from '../types'
 
 interface Props {
-  dolar: DolarResults[]
+  dolar: Dolar[]
   error: boolean | null
 }
 
@@ -13,7 +13,7 @@ export default function DolarComponent({ dolar, error }: Props) {
       </div>
     )
   }
-  const filteredDolar = dolar.filter(d => d.casa.nombre === 'Oficial' || d.casa.nombre === 'Blue').map(d => d.casa)
+  const filteredDolar = dolar.filter(d => d.casa === 'oficial' || d.casa === 'blue')
 
   return (
     <div className="dolar">

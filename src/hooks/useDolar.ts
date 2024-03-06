@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
-import { type DolarResults } from '../types'
+import { type Dolar } from '../types'
 
 export const UseDolar = () => {
-  const [dolar, setDolar] = useState<DolarResults[]>([])
+  const [dolar, setDolar] = useState<Dolar[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<boolean | null>(null)
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://www.dolarsi.com/api/api.php?type=dolar')
+    fetch('https://dolarapi.com/v1/dolares')
       .then(async (res) => await res.json())
       .then((data) => {
         setDolar(data)

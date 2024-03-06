@@ -11,7 +11,7 @@ interface Props {
 export default function Holiday({ today, holidays, error }: Props) {
   const { setIsHoliday } = useContext(HolidayContext)
 
-  if (error as boolean) {
+  if (error as boolean && holidays.length <= 0) {
     return (
       <div className='holiday'>
         <p>Error al obtener el siguiente feriado</p>
