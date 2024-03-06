@@ -21,7 +21,7 @@ export default function WeatherItem({ weather, error }: Props) {
   const date = new Date(
     new Date(weather.time).getFullYear(),
     new Date(weather.time).getMonth(),
-    new Date(weather.time).getDate() + 1
+    new Date(weather.time).getDate()
   ).toLocaleString('es-ES', {
     weekday: 'long',
     month: 'long',
